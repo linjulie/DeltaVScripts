@@ -2,12 +2,14 @@
 Dsp.IsAutoTagDeselectionEnabled = false;
 GL.Library.F_SetHistoryTag(Dsp.Tag);
 
+
+
 //function that executes query and saves values into two variables
-async function SQLQuery(PopUp: any){
+async function SQLQuery(id:any){
     let result;
 
     try{
-        let qres = await SQL.SQLDatasource1.QueryAsync(GL.Library.S_PopUpQuery, PopUp);
+        let qres = await SQL.SQLDatasource1.QueryAsync(GL.Library.S_PopUpQuery, id);
         let qresArray:string[] = String(qres).split(",");
      
         let header = qresArray[0];
@@ -17,7 +19,6 @@ async function SQLQuery(PopUp: any){
 
         Dsp.HeaderTxt.Label = header;
         Dsp.SectionTxt.Label = section; 
-       // Dsp.testTxt.Label = qres;
 
     } catch(e){
         result = e.message;
@@ -27,5 +28,5 @@ async function SQLQuery(PopUp: any){
     }
 } 
 
-SQLQuery(88);
 
+SQLQuery(18);
