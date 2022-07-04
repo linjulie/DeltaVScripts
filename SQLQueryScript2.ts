@@ -28,5 +28,5 @@ async function SQLQuery(id:any){
     }
 } 
 
-
-SQLQuery(18);
+//Dsp.Context1 refers to the PopUpId value decided in the display when configurating the open popup GEM
+SQLQuery(Dsp.Context1);
